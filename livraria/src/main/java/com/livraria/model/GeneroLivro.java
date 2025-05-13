@@ -1,0 +1,26 @@
+package com.livraria.model;
+
+public enum GeneroLivro {
+	FICCAO_CIENTIFICA,
+    FANTASIA,
+    ROMANCE,
+    TERROR,
+    SUSPENSE,
+    BIOGRAFIA,
+    AVENTURA,
+    DRAMA,
+    POESIA,
+    DIDATICO,
+    COMEDIA,
+    HISTORIA,
+    CIENCIA,
+    ESPIRITUALIDADE,
+    NEGOCIOS,
+    ECONOMIA,
+    TECNOLOGIA,
+    COMPUTACAO,
+    SAUDE,
+    EDUCACAO,
+    DIREITO,
+    MITOLOGIA,
+}
