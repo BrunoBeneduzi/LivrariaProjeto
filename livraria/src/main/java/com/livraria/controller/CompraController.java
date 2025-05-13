@@ -25,18 +25,17 @@ public class CompraController {
 
     @PostMapping
     public ResponseEntity<?> realizarCompra(@RequestBody CompraDto compraDto) {
+    	
         Optional<LivroModel> livroOptional = livroRepository.findById(compraDto.livroId());
         
         if (livroOptional.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Livro não encontrado.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Livro não encontrado.");
         }
 
         LivroModel livro = livroOptional.get();
 
-        if (livro.getDisponivel()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body("Livro não está disponível para venda.");
+        if (!livro.getDisponivel()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Livro não está disponível para venda.");
         }
 
         BigDecimal precoFinal = livro.getPreco();
@@ -46,7 +45,9 @@ public class CompraController {
         }
 
     
-
+       livro.setDisponivel(false);
+       livroRepository.save(livro); 
+        
        CompraRespostaDto resposta = new CompraRespostaDto(livro.getTitulo(),livro.getPreco(),compraDto.estudante(),precoFinal);
 
         return ResponseEntity.ok(resposta);
