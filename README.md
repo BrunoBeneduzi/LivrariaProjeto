@@ -1,33 +1,70 @@
-Livraria: Implementar a API com armazenamento em um banco de dados para gerenciar
+# 📚 API de Livraria
+
+Esta é uma API RESTful desenvolvida em **Java com Spring Boot** para gerenciar uma livraria. A aplicação permite o cadastro, listagem, edição, exclusão e compra de livros, com armazenamento dos dados em um banco **PostgreSQL**.
+
+---
+
+## 🚀 Funcionalidades
+
+### 📖 Livros
+- **Criar livro**: cadastra um novo livro com título, gênero, editora, data de publicação, preço e autores.  
+  ➤ Autores com mesmo nome e sobrenome não são duplicados.
+
+- **Editar livro**: permite alterar as informações do livro, **exceto o status de venda**.
+
+- **Excluir livro**: remove um livro existente.  
+  ➤ Retorna erro se o livro não for encontrado.
+
+- **Listar livros**: exibe livros com os seguintes campos:
+  - ID
+  - Título
+  - Gênero literário
+  - Preço
+  - Disponibilidade para venda
+  - Nome e sobrenome dos autores (em um único campo)  
+  ➤ Pode ser filtrado por título, gênero, autor e status de venda.
+
+- **Comprar livro**: efetua a compra de um livro, recebendo:
+  - Nome e sobrenome do comprador
+  - Forma de pagamento: `pix`, `crédito`, ou `débito`
+  - Se é estudante (desconto de 50%)
+  - Livro desejado  
+  ➤ Retorna informações do livro comprado e o valor final pago.  
+  ➤ Caso o livro não esteja disponível, retorna uma mensagem de erro.
+
+---
+
+## 🧾 Tecnologias utilizadas
+
+- ✅ Java 17+  
+- ✅ Spring Boot  
+- ✅ Spring Web  
+- ✅ Spring Data JPA  
+- ✅ Bean Validation  
+- ✅ PostgreSQL  
+- ✅ API RESTful
+
+---
+
+## ⚙️ Como executar o projeto
+
+### Pré-requisitos:
+- Java 17+
+- PostgreSQL instalado e rodando
+- Maven
+
+### Configurar o banco de dados:
+
+No arquivo `application.properties` (ou `application.yml`), configure o acesso ao PostgreSQL:
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/Lojalivraria
+spring.datasource.username=seu_usuario
+spring.datasource.password=sua_senha
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
 
 
-livros à venda. Os livros possuem título, gênero literário, um ou mais autores, editora, data
 
-
-de publicação, preço e se ainda estão disponíveis para venda; Os autores possuem nome,
-
-
-sobrenome, data de nascimento e nacionalidade. A API deve englobar:
-
-
-5.1. Criação de livros: Deverá receber todas as informações do livro e seu(s) o(s)
-autor(es), e se os mesmos já existem com o mesmo nome e sobrenome, não
-devem ser duplicados.
-
-
-5.2. Alteração: permite editar as propriedades do livro, exceto se foi vendido ou não;
-
-5.3. Exclusão de livros: Se o livro não existe deve retornar um erro e se excluir
-corretamente, retornar apenas ok.
-
-
-5.4. Listagem dos livros: permite filtrar por parte do título, gênero literário, autor e/ou se
-está vendido ou não. A lista de retorno deve contar apenas o ID do livro, título,
-preço, gênero, se está disponível para venda e o nome e sobrenome do(s) autor(es)
-em um único campo.
-
-
-5.5. Compra: deverá receber o nome e sobrenome do comprador, forma de
-pagamento(pix, crédito ou débito), se é estudante e livro desejado. Se for estudante,
-terá 50% de desconto. O retorno deve ser as informações do livro comprado e o
-preço pago. Se o livro não estiver à venda, deve retornar uma mensagem de erro.
