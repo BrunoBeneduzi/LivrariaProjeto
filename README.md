@@ -33,7 +33,53 @@ Esta é uma API RESTful desenvolvida em **Java com Spring Boot** para gerenciar 
   ➤ Caso o livro não esteja disponível, retorna uma mensagem de erro.
 
 ---
+# 📬 Exemplos de Requisições HTTP
+➕ POST /livros – Exemplo de JSON para criação de livro:
+## 📬 Exemplo de JSON para criação de livro
 
+```json
+{
+  "titulo": "o hobbit",
+  "editora": "estrela",
+  "dataDePublicacao": "2000-10-21",
+  "genero": "TERROR",
+  "preco": 120.10,
+  "disponivel": true,
+  "autores": [
+    {
+      "nomeCompleto": "Bruno Beneduzi",
+      "dataDeNascimento": "1999-01-21",
+      "nacionalidade": "brasileiro"
+    }
+  ]
+}
+```
+
+🎭 Gêneros disponíveis para cadastro:
+FICCAO_CIENTIFICA
+FANTASIA
+ROMANCE
+TERROR
+SUSPENSE
+BIOGRAFIA
+AVENTURA
+DRAMA
+POESIA
+DIDATICO
+COMEDIA
+HISTORIA
+CIENCIA
+ESPIRITUALIDADE
+NEGOCIOS
+ECONOMIA
+TECNOLOGIA
+COMPUTACAO
+SAUDE
+EDUCACAO
+DIREITO
+MITOLOGIA
+
+---
 ## 🧾 Tecnologias utilizadas
 
 - ✅ Java 17+  
@@ -65,6 +111,5 @@ spring.datasource.password=sua_senha
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
-
-
+```
 
