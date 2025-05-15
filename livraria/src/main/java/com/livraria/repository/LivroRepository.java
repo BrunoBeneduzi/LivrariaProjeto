@@ -28,6 +28,10 @@ public interface LivroRepository extends JpaRepository<LivroModel, Long>{
 	
 	@Query("SELECT l FROM LivroModel l WHERE l.disponivel = :status")
 	List<LivroModel> buscarPorStatusDeCompra(@Param("status") Boolean status);
+	
+	@Query("SELECT l FROM LivroModel l JOIN l.autores a WHERE LOWER(a.nomeCompleto) LIKE LOWER(CONCAT('%', :nomeCompleto, '%'))")
+	List<LivroModel> buscarPorNomeCompletoAutor(@Param("nomeCompleto") String nomeCompleto);
+
 
 
 }

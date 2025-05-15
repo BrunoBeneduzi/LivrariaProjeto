@@ -17,7 +17,7 @@ import com.livraria.model.LivroModel;
 import com.livraria.repository.LivroRepository;
 
 @RestController
-@RequestMapping("/compras")
+@RequestMapping("/livros/compras")
 public class CompraController {
 
     @Autowired

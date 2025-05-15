@@ -88,7 +88,4 @@ public class AutorModel {
 		return "AutorModel [nomeCompleto=" + nomeCompleto + ", dataDeNascimento=" + dataDeNascimento
 				+ ", nacionalidade=" + nacionalidade + "]";
 	}
-
-	
-	
 }
