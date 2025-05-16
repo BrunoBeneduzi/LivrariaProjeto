@@ -115,7 +115,4 @@ public class LivroCadastro {
 		
 		return autorLista;
 	}
-	
-
-
 }

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.livraria.dto.LivroAtualizarDto;
 import com.livraria.dto.LivroCadastroDto;
+import com.livraria.dto.LivroListagemDto;
 import com.livraria.model.LivroModel;
 import com.livraria.repository.LivroRepository;
 import com.livraria.service.LivroAtualizar;
@@ -46,14 +47,13 @@ public class LivroController {
 	}
 	
 	@GetMapping
-	public List<LivroModel> listarLivros( 
+	public List<LivroListagemDto> listarLivros(
 			@RequestParam(required = false) String titulo,
 		    @RequestParam(required = false) String genero,
 		    @RequestParam(required = false) String autor,
 		    @RequestParam(required = false) Boolean disponivel) {
 		
 		return this.livroFiltro.filtroLivros(titulo, genero, autor, disponivel);
-	    
 	}
 	
 	@PutMapping("/{id}")

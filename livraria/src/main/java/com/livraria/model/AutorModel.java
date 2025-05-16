@@ -39,6 +39,10 @@ public class AutorModel {
 	
 	public AutorModel() {}
 	
+	public AutorModel(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
+	}
+	
 	public AutorModel(AutorCadastroDto dto) {
 		this.nomeCompleto = dto.nomeCompleto().toUpperCase().trim();
 		this.dataDeNascimento = dto.dataDeNascimento();
