@@ -21,6 +21,7 @@ import com.livraria.model.LivroModel;
 import com.livraria.repository.LivroRepository;
 import com.livraria.service.LivroAtualizar;
 import com.livraria.service.LivroCadastro;
+import com.livraria.service.LivroListagem;
 
 import jakarta.validation.Valid;
 
@@ -33,6 +34,8 @@ public class LivroController {
 	private LivroRepository livroRepository;
 	@Autowired
 	private LivroAtualizar livroDto;
+	@Autowired
+	private LivroListagem livroFiltro;
 	
 	@PostMapping
 	public ResponseEntity<Void> criarLivro(@RequestBody @Valid LivroCadastroDto livroCadastroDto){
@@ -49,17 +52,7 @@ public class LivroController {
 		    @RequestParam(required = false) String autor,
 		    @RequestParam(required = false) Boolean disponivel) {
 		
-		if(titulo != null) {
-			return this.livroRepository.buscarPorTitulo(titulo);
-		}else if(genero != null){
-			return this.livroRepository.buscarPorGenero(genero);
-		}else if(disponivel != null) {
-			return this.livroRepository.buscarPorStatusDeCompra(disponivel);
-		}else if(autor != null) {
-			return this.livroRepository.buscarPorNomeCompletoAutor(autor);
-		}
-
-		return null;
+		return this.livroFiltro.filtroLivros(titulo, genero, autor, disponivel);
 	    
 	}
 	
