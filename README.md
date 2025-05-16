@@ -127,17 +127,18 @@ MITOLOGIA
 ---
 
 ## 🔧 Como Rodar o Projeto
-💻 IDE recomendada: Qualquer IDE que suporte Java. Eu recomendo o Eclipse para facilitar o processo, pois foi utilizado neste projeto.
 
-1.1. Como baixar o Eclipse?
+1. 💻 **IDE recomendada**: Qualquer IDE que suporte Java. Eu recomendo o **Eclipse** para facilitar o processo, pois foi utilizado neste projeto.
 
-🗄️ Este projeto utiliza o banco de dados PostgreSQL, mas você pode usar outro banco de sua preferência. Caso queira usar o PostgreSQL, siga as instruções abaixo:
+   1.1. [Como baixar o Eclipse?](https://www.youtube.com/watch?v=KWGIaWh71q4)
 
-2.1. Link para baixar o PostgreSQL
+2. 🗄️ Este projeto utiliza o banco de dados **PostgreSQL**, mas você pode usar outro banco de sua preferência. Caso queira usar o **PostgreSQL**, siga as instruções abaixo:
 
-2.2. Tutorial de como baixar o PostgreSQL
+   2.1. [Link para baixar o PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
 
-🌐 Para testar a API e fazer requisições HTTP, você pode usar ferramentas como Insomnia ou Postman.
+   2.2. [Tutorial de como baixar o PostgreSQL](https://www.youtube.com/watch?v=UbX-2Xud1JA)
+
+3. 🌐 Para testar a API e fazer requisições HTTP, você pode usar ferramentas como Insomnia ou Postman.
 
 3.1. [Site do Insomnia](https://insomnia.rest/download)
 
