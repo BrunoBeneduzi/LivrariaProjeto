@@ -54,6 +54,26 @@ Esta é uma API RESTful desenvolvida em **Java com Spring Boot** para gerenciar 
   ]
 }
 ```
+## 🔎 GET /livros – Filtro de livros com parâmetros opcionais
+Este endpoint permite buscar livros cadastrados no sistema com base em filtros como autor, título, gênero e disponibilidade.
+
+✅ Parâmetros disponíveis:
+Parâmetro	Tipo	Descrição
+autor	String	Nome ou sobrenome do autor a ser buscado.
+titulo	String	Título (ou parte do título) do livro.
+genero	String	Gênero literário a ser filtrado.
+disponivel	Boolean	Indica se o livro está disponível para venda (true/false).
+
+GET http://localhost:8080/livros?autor=bruno
+
+
+GET http://localhost:8080/livros?titulo=o+senhor+dos+aneis
+
+
+GET http://localhost:8080/livros?genero=terror
+
+
+GET http://localhost:8080/livros?disponivel=false
 
 🎭 Gêneros disponíveis para cadastro:
 FICCAO_CIENTIFICA
