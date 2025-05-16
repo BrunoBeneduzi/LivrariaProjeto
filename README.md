@@ -64,16 +64,16 @@ titulo	String	Título (ou parte do título) do livro.
 genero	String	Gênero literário a ser filtrado.
 disponivel	Boolean	Indica se o livro está disponível para venda (true/false).
 
-GET http://localhost:8080/livros?autor=bruno
+GET /livros?autor=bruno
 
 
-GET http://localhost:8080/livros?titulo=o+senhor+dos+aneis
+GET /livros?titulo=o+senhor+dos+aneis
 
 
-GET http://localhost:8080/livros?genero=terror
+GET /livros?genero=terror
 
 
-GET http://localhost:8080/livros?disponivel=false
+GET /livros?disponivel=false
 
 🎭 Gêneros disponíveis para cadastro:
 FICCAO_CIENTIFICA
