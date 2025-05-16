@@ -17,6 +17,8 @@ public class LivroListagem {
 	
 	public List<LivroListagemDto> filtroLivros(String titulo, String genero, String autor, Boolean disponivel) {
 		List<LivroModel> livrosLista = null;
+		
+		
 		if(titulo != null) {
 			livrosLista = this.livroRepository.buscarPorTitulo(titulo); 
 			
@@ -51,8 +53,9 @@ public class LivroListagem {
 			            .collect(Collectors.toList());
 			
 		}else if(disponivel != null) {
-			livrosLista = this.livroRepository.buscarPorGenero(genero);
 			
+			livrosLista = this.livroRepository.buscarPorStatusDeCompra(disponivel);
+			System.out.println(livrosLista);
 			return livrosLista.stream()
 			        .map(livro -> new LivroListagemDto(
 			                livro.getId(),

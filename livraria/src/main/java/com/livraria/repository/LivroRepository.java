@@ -23,8 +23,9 @@ public interface LivroRepository extends JpaRepository<LivroModel, Long>{
 	@Query("SELECT l FROM LivroModel l JOIN FETCH l.autores a WHERE LOWER(l.titulo) LIKE LOWER(CONCAT('%', :titulo, '%'))")
 	List<LivroModel> buscarPorTitulo(@Param("titulo") String titulo);
 	
-	@Query("SELECT l FROM LivroModel l JOIN FETCH l.autores a WHERE LOWER(l.genero) LIKE LOWER(CONCAT('%', :genero, '%'))")
+	@Query("SELECT DISTINCT l FROM LivroModel l JOIN FETCH l.autores a WHERE LOWER(l.genero) LIKE LOWER(CONCAT('%', :genero, '%'))")
 	List<LivroModel> buscarPorGenero(@Param("genero") String genero);
+
 	
 	@Query("SELECT l FROM LivroModel l WHERE l.disponivel = :status")
 	List<LivroModel> buscarPorStatusDeCompra(@Param("status") Boolean status);

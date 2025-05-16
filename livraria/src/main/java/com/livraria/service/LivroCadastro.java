@@ -95,6 +95,7 @@ public class LivroCadastro {
 		novoLivro.setEditora(livroLista.getEditora());
 		novoLivro.setGenero(livroLista.getGenero());
 		novoLivro.setPreco(livroLista.getPreco());
+		
 		novoLivro.setAutores(new ArrayList<>(livroLista.getAutores()));
 		
 		return novoLivro;
@@ -103,7 +104,10 @@ public class LivroCadastro {
 	public List<AutorModel> verificaSeAutorJaFoiCadastrado(LivroCadastroDto dto) {
 		List<AutorModel> autorLista = new ArrayList<>();
 		
+		
+		
 		for(AutorCadastroDto autorDto: dto.autores()) {
+		
 			Optional<AutorModel> autorExiste =  this.autorRepository.findByNomeCompleto(autorDto.nomeCompleto().toUpperCase());
 			
 			if(autorExiste.isPresent()) {
