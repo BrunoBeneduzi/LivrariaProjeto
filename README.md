@@ -112,12 +112,24 @@ MITOLOGIA
 
 ---
 
-## ⚙️ Como executar o projeto
+## 🔧 Como Rodar o Projeto
+💻 IDE recomendada: Qualquer IDE que suporte Java. Eu recomendo o Eclipse para facilitar o processo, pois foi utilizado neste projeto.
 
-### Pré-requisitos:
-- Java 17+
-- PostgreSQL instalado e rodando
-- Maven
+1.1. Como baixar o Eclipse?
+
+🗄️ Este projeto utiliza o banco de dados PostgreSQL, mas você pode usar outro banco de sua preferência. Caso queira usar o PostgreSQL, siga as instruções abaixo:
+
+2.1. Link para baixar o PostgreSQL
+
+2.2. Tutorial de como baixar o PostgreSQL
+
+🌐 Para testar a API e fazer requisições HTTP, você pode usar ferramentas como Insomnia ou Postman.
+
+3.1. [Site do Insomnia](https://insomnia.rest/download)
+
+3.2. [Site do Postman ](https://www.postman.com/downloads/)
+
+3.3. Ambas permitem enviar requisições GET, POST, PUT, DELETE e visualizar as respostas de forma simples.
 
 ### Configurar o banco de dados:
 
